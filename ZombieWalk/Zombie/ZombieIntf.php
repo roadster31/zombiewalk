@@ -20,4 +20,6 @@ use ZombieWalk\Aliment\AlimentIntf;
 interface ZombieIntf
 {
     public function miam(AlimentIntf $aliment);
+
+    public function etat();
 }

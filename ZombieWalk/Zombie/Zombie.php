@@ -23,6 +23,13 @@ class Zombie implements ZombieIntf
     /** @var  Metabolisme */
     protected $metabolisme;
 
+    protected $membres = [
+        'Jambe gauche' => true,
+        'Jambe droite' => true,
+        'Bras gauche' => true,
+        'Bras droit' => true,
+    ];
+
     public function __construct()
     {
         $this->metabolisme = new Metabolisme();
@@ -33,11 +40,42 @@ class Zombie implements ZombieIntf
          $action = $this->metabolisme->run($aliment);
 
          if ($action == Metabolisme::AMPUTATION) {
-
+            $this->amputer();
          } elseif ($action == Metabolisme::GREFFE) {
-
+            $this->greffer();
          } else {
              throw new \Exception("WTF ?");
          }
+    }
+
+    public function amputer()
+    {
+        foreach ($this->membres as $nom => &$etat) {
+            if ($etat) {
+                $etat = false;
+                break;
+            }
+        }
+    }
+
+    public function greffer()
+    {
+        foreach ($this->membres as $nom => &$etat) {
+            if (! $etat) {
+                $etat = true;
+                break;
+            }
+        }
+    }
+
+    public function etat()
+    {
+        $result = '';
+
+        foreach ($this->membres as $nom => $etat) {
+            $result .= "$nom : ".($etat ? 'Present' : 'Absent');
+        }
+
+        return $result;
     }
 }
