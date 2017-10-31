@@ -49,6 +49,6 @@ if(!function_exists("readline")) {
 $userInterface = new \ZombieWalk\UserInterface\UserInterface();
 
 while(1) {
-    $userInput = readline("Que voulez vous donner à manger au zombie ? \n");
+    $userInput = readline("Que voulez vous donner à manger au zombie ? (q pour quitter, h pour l'aide)\n");
     $userInterface->processUserInput($userInput);
 }

@@ -75,7 +75,7 @@ class Zombie implements ZombieIntf
         $result = '';
 
         foreach ($this->membres as $nom => $etat) {
-            $result .= "$nom : ".($etat ? 'Present' : 'Absent');
+            $result .= "$nom : ".($etat ? 'Present' : 'Absent'). "\n";
         }
 
         return $result;
