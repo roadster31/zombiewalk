@@ -57,9 +57,11 @@ class Zombie implements ZombieIntf
         foreach ($this->membres as $nom => &$etat) {
             if ($etat) {
                 $etat = false;
-                break;
+                return;
             }
         }
+
+        throw new \Exception("J'ai plus de membres !");
     }
 
     public function greffer()
