@@ -52,7 +52,7 @@ class AlimentFactory
     }
 
     /**
-     * @return array liste des couples alias / titre
+     * @return array
      */
     public function enumerate()
     {

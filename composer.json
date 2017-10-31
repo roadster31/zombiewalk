@@ -1,6 +1,10 @@
 {
-    "name": "franck/zombie-walk",
-    "description": "The zombie halloween walk",
-    "license": "GPL v3",
+    "name": "franck/zombiewalk",
+    "authors": [
+        {
+            "name": "Franck Allimant",
+            "email": "github@allimant.org"
+        }
+    ],
     "require": {}
 }
