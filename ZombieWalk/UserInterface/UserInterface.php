@@ -38,7 +38,7 @@ class UserInterface
         }
     }
 
-    function manageTour(string $userinput) {
+    function manageTour($userinput) {
         try {
             $aliment = $this->factory->getAliment($userinput);
             $miam = $this->zombie->miam($aliment)->etat();

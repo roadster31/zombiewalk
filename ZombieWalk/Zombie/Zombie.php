@@ -34,7 +34,7 @@ class Zombie implements ZombieIntf
     {
         $this->metabolisme = new Metabolisme();
 
-        $this->$this->load();
+        $this->load();
     }
 
     public function miam(AlimentIntf $aliment)
