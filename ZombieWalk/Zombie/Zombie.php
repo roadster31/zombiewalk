@@ -46,6 +46,8 @@ class Zombie implements ZombieIntf
          } else {
              throw new \Exception("WTF ?");
          }
+
+         return $this;
     }
 
     public function amputer()
