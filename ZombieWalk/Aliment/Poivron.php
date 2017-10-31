@@ -13,7 +13,7 @@
  * Date: 31/10/2017 20:28
  */
 
-namespace Aliment;
+namespace ZombieWalk\Aliment;
 
 class Poivron implements AlimentIntf
 {

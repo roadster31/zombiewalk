@@ -6,5 +6,10 @@
             "email": "github@allimant.org"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "ZombieWalk\\": "ZombieWalk/"
+        }
+    },
     "require": {}
 }

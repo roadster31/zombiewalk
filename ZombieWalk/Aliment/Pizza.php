@@ -10,13 +10,21 @@
 
 /**
  * Created by Franck Allimant, CQFDev <franck@cqfdev.fr>
- * Date: 31/10/2017 20:25
+ * Date: 31/10/2017 20:26
  */
 
-namespace Aliment;
+namespace ZombieWalk\Aliment;
 
-interface AlimentIntf
+class Pizza implements AlimentIntf
 {
-    public function getTitre();
-    public function getAlias();
+
+    public function getTitre()
+    {
+        return "Pizza Mageritha";
+    }
+
+    public function getAlias()
+    {
+        return "piz";
+    }
 }

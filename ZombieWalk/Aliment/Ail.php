@@ -10,28 +10,21 @@
 
 /**
  * Created by Franck Allimant, CQFDev <franck@cqfdev.fr>
- * Date: 31/10/2017 20:51
+ * Date: 31/10/2017 20:27
  */
 
-namespace Metabolisme;
+namespace ZombieWalk\Aliment;
 
-use Aliment\AlimentIntf;
-
-class Metabolisme
+class Ail implements AlimentIntf
 {
-    const AMPUTATION = 1;
-    const GREFFE = 2;
 
-    public function run(AlimentIntf $aliment)
+    public function getTitre()
     {
-        $alias = $aliment->getAlias();
+        return "Ail";
+    }
 
-        switch ($alias) {
-            case 'piz' :
-                return self::GREFFE;
-
-            default:
-                return self::AMPUTATION;
-        }
+    public function getAlias()
+    {
+        return "ail";
     }
 }

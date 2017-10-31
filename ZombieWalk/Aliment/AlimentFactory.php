@@ -13,7 +13,7 @@
  * Date: 31/10/2017 20:34
  */
 
-namespace Aliment;
+namespace ZombieWalk\Aliment;
 
 class AlimentFactory
 {
@@ -37,7 +37,7 @@ class AlimentFactory
      * @return AlimentIntf
      * @throws \Exception
      */
-    public function getAliment(string $alias)
+    public function getAliment($alias)
     {
         $alias = strtolower($alias);
 

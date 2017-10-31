@@ -10,21 +10,13 @@
 
 /**
  * Created by Franck Allimant, CQFDev <franck@cqfdev.fr>
- * Date: 31/10/2017 20:27
+ * Date: 31/10/2017 20:25
  */
 
-namespace Aliment;
+namespace ZombieWalk\Aliment;
 
-class Ail implements AlimentIntf
+interface AlimentIntf
 {
-
-    public function getTitre()
-    {
-        return "Ail";
-    }
-
-    public function getAlias()
-    {
-        return "ail";
-    }
+    public function getTitre();
+    public function getAlias();
 }

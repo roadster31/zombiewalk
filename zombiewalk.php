@@ -6,7 +6,7 @@
  * Time: 20:12
  */
 
-use Aliment\AlimentFactory;
+include "vendor/autoload.php";
 
 echo "
                                ..... \n           
@@ -29,15 +29,11 @@ echo "
                          /`   /`     o\  \n        
                          |___ |_______|. \n
 ";
+
 echo "Bonjour. Je vous présente Jean Jacques.\n";
 echo "Vous verrez, il est très sympa.";
 echo "Vous pouvez lui donner à manger. Attention, il est allergique aux poivrons, ail et la banane.\n";
 echo "Mais il adore la pizza.\n";
-
-const PIZZA = "piz";
-const AIL = "ail";
-const POIVRON = "poi";
-const BANANE = "ban";
 
 if(!function_exists("readline")) {
     function readline($prompt = null){
@@ -50,16 +46,9 @@ if(!function_exists("readline")) {
     }
 }
 
-while(1) {
-    $userInput = readline("Que voulez vous donner à manger au zombie ?");
-    processUserInput($userInput);
-}
+$userInterface = new \ZombieWalk\UserInterface\UserInterface();
 
-function processUserInput(String $user) {
-    $factory = new AlimentFactory();
-    try {
-        $aliment = $factory->getAliment($user);
-    } catch (\Exception $e) {
-        echo $e->getMessage();
-    }
+while(1) {
+    $userInput = readline("Que voulez vous donner à manger au zombie ? \n");
+    $userInterface->processUserInput($userInput);
 }
