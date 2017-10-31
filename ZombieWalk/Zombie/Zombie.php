@@ -33,6 +33,8 @@ class Zombie implements ZombieIntf
     public function __construct()
     {
         $this->metabolisme = new Metabolisme();
+
+        $this->$this->load();
     }
 
     public function miam(AlimentIntf $aliment)
@@ -55,9 +57,11 @@ class Zombie implements ZombieIntf
         foreach ($this->membres as $nom => &$etat) {
             if ($etat) {
                 $etat = false;
-                break;
+                return;
             }
         }
+
+        throw new \Exception("J'ai plus de membres !");
     }
 
     public function greffer()
@@ -79,5 +83,19 @@ class Zombie implements ZombieIntf
         }
 
         return $result;
+    }
+
+    private function save()
+    {
+        file_put_contents(__DIR__ . "/zombie.txt", json_encode($this->membres));
+    }
+
+    private function load()
+    {
+        $data = @file_get_contents(__DIR__ . "/zombie.txt");
+
+        if ($data) {
+            $this->membres = json_decode($data);
+        }
     }
 }
